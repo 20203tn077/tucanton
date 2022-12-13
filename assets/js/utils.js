@@ -29,6 +29,8 @@ const logout = () => {
     window.location.replace('/app/views/inicio_de_sesion.html')
 }
 
+const openChat = () => window.location.replace('/app/views/chat.html')
+
 
 const chat = {
     user: {

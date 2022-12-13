@@ -79,7 +79,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" style="width: 300px;">
                         <table class="table table-hover m-0">
-                            <tr>
+                            <tr  role="button" onclick="openChat()">
                                 <td>
                                     <div class="row">
                                         <div class="col-auto">
@@ -94,13 +94,13 @@
                                         <div class="col-auto">
                                             <div class="vstack gap-0 h-100 d-flex flex-column justify-content-between">
                                                 <small><span class="badge bg-transparent p-0 text-dark">18:45</span></small>
-                                                <span class="badge text-bg-primary rounded-pill">3</span>
+                                                <span class="badge text-bg-primary rounded-pill">2</span>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr  role="button" onclick="openChat()">
                                 <td>
                                     <div class="row">
                                         <div class="col-auto">
@@ -114,8 +114,8 @@
                                         </div>
                                         <div class="col-auto">
                                             <div class="vstack gap-0 h-100 d-flex flex-column justify-content-between">
-                                                <small><span class="badge bg-transparent p-0 text-dark">18:45</span></small>
-                                                <span class="badge text-bg-primary rounded-pill">3</span>
+                                                <small><span class="badge bg-transparent p-0 text-dark">14:43</span></small>
+                                                <span class="badge text-bg-primary rounded-pill">1</span>
                                             </div>
                                         </div>
                                     </div>
@@ -124,7 +124,8 @@
                         </table>
                     </ul>
                 </div>
-                <button type="button"
+                <div class="dropdown d-flex">
+                <button type="button" data-bs-toggle="dropdown"
                     class="d-none d-md-block me-3 btn text-primary p-0 m-0 position-relative align-bottom">
                     <h4 class="m-0"><i class="fa fa-shopping-cart"></i></h4>
                     <span ng-show="cartItems.length"
@@ -132,6 +133,26 @@
                         {{cartItems.length}}
                     </span>
                 </button>
+                    <ul class="dropdown-menu dropdown-menu-end" style="width: 300px;">
+                        <table class="table m-0">
+                            <tr role="button">
+                                <td>
+                                    <div class="row g-2">
+                                        <div class="col-auto">
+                                            <img src="/assets/img/houses/house01.jpg" style="height: 60px;" alt="">
+                                        </div>
+                                        <div class="col">
+                                            <div class="vstack gap-0">
+                                                <b><span>Moderna casa en venta</span></b>
+                                                <span class="fs-5">$14,900,000.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+                </div>
                 <li class="nav-item dropdown align-middle">
                     <span class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">

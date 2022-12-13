@@ -64,8 +64,9 @@ app.controller('productController', $scope => {
     $scope.getBankColor = getBankColor
     $scope.getBankImage = getBankImage
 
-    $scope.notifications= [1,2,3,4]
+    $scope.notifications= [1,3]
     $scope.sessionUser = getSessionUser()
     $scope.showProperty = property => window.location.replace('/app/views/propiedad.html')
     window.onload = loaded
+    $scope.addToCart = () => $scope.cartItems = [2]
 })

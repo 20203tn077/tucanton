@@ -25,7 +25,7 @@ app.controller('inicioController', $scope => {
         type: 'Venta', image: 'house02.jpg', price: 14900000, title: 'Moderna casa en venta', description: '"Moderna casa en venta. Casa de un nivel rodeada de jardín.Cuenta con 509 m2 construcción / 880 m2 terreno. Recámara de servicio con baño, 4 recámaras suite con baño propio, ventilación y luz natural uniforme, salón de juegos/ bar con baño.Alberca privada con calentador y salón de estar con baño - Cuarto de TV"', location: 'Arroyo La Estancia, Juriquilla, Querétaro, Querétaro', publishedDate: new Date('01/12/2022'), rooms: 4, area: 880, floors: 1, fullBaths: 5, halfBaths: 2, parkings: 2, pools: 1, additionalDetails: 'asd'
     }
 
-    $scope.notifications= [1,2,3,4]
+    $scope.notifications= [1]
     $scope.sessionUser = getSessionUser()
     $scope.showProperty = property => window.location.replace('/app/views/propiedad.html')
     window.onload = loaded
