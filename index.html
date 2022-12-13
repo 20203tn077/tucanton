@@ -1,556 +1,228 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="tucanton">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tucantón</title>
-    <link rel="stylesheet" href="/assets/css/fonts.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <script src="/assets/js/angular.min.js"></script>
-    <script src="/app/app.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tucantón</title>
+  <script>
+    window.location.replace('/app/views/inicio.html')
+  </script>
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/fontawesome.min.css">
+  <script src="/assets/js/angular.min.js"></script>
+  <script src="/app/app.js"></script>
 </head>
-<body>
-  <ng-include src="'/app/views/layout/user/navbarUser.html'"></ng-include>    
-      <div class="container my-4">
-        <div class="row">
-          <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-                Checked checkbox
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                Default radio
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                Default checked radio
-              </label>
-            </div>
-            <div class="bg-danger p-1">
-              <div class="bg-info p-2">
-                <div class="bg-danger p-3">
-                  <div class="bg-info p-4">
-                    <div class="bg-danger p-5">
-                      <div class="bg-info p-1"></div>
-                    </div>
+
+<body class="min-vh-100 d-flex flex-column justify-content-between">
+  <div>
+    <div id="loader"></div>
+    <ng-include src="'/app/views/layout/navbarUser.html'"></ng-include>
+    <div class="container my-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Default checkbox
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Checked checkbox
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Default radio
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Default checked radio
+            </label>
+          </div>
+          <div class="bg-danger p-1">
+            <div class="bg-info p-2">
+              <div class="bg-danger p-3">
+                <div class="bg-info p-4">
+                  <div class="bg-danger p-5">
+                    <div class="bg-info p-1"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="callout callout-primary">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
-            <div class="callout callout-secondary">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
-            <div class="callout callout-success">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
-            <div class="callout callout-danger">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
-            <div class="callout callout-warning">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
-            <div class="callout callout-info">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
-            <div class="callout callout-light">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
-            <div class="callout callout-dark">
-              <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you stand out. It has
-              three variants via modifier classes.
-            </div>
           </div>
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-icon" id="basic-addon1">
-            <i class="fas fa-user"></i>
-          </span>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-            aria-describedby="basic-addon1">
-          <span class="input-group-icon" id="basic-addon1">
-            <i class="fas fa-user"></i>
-          </span>
-        </div>
-        <h1><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 1</h1>
-        <h2><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 2</h2>
-        <h3><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 3</h3>
-        <h4><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 4</h4>
-        <h5><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 5</h5>
-        <h6><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 6</h6>
-        <p class="fs-1"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h1</p>
-        <p class="fs-2"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h2</p>
-        <p class="fs-3"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h3</p>
-        <p class="fs-4"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h4</p>
-        <p class="fs-5"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h5</p>
-        <p><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal</p>
-        <small><i class="fas fa-exclamation-circle"></i>&nbsp;Texto pequeño</small>
-    
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-    
-        <div class="card card-product shadow-sm" style="width: 18rem;">
-          <img src="/assets/img/houses/house.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h4 class="card-title">$5000</h4>
-            <div class="card-text">Apartamento en renta</div>
-            <small class="d-block">lugar</small>
-            <small class="d-block">asd fecha xD</small>
-            <div class="row mt-1 gx-2">
-              <div class="col-auto"><small><i class="fas fa-exclamation-circle"></i>&nbsp;Holanda</small></div>
-              <div class="col-auto"><small><i class="fas fa-exclamation-circle"></i>&nbsp;Holanda</small></div>
-              <div class="col-auto"><small><i class="fas fa-exclamation-circle"></i>&nbsp;Holanda</small></div>
-            </div>
-          </div>
-        </div>
-        <input class="form-control" type="text" name="" id="">
-    
-    
-        <span class="badge text-bg-primary">kdghkajdgkjgdfjkd</span>
-        <span class="badge text-bg-secondary">kdghkajdgkjgdfjkd</span>
-        <span class="badge text-bg-danger">kdghkajdgkjgdfjkd</span>
-        <span class="badge text-bg-warning">kdghkajdgkjgdfjkd</span>
-        <span class="badge text-bg-info">kdghkajdgkjgdfjkd</span>
-        <span class="badge text-bg-success">kdghkajdgkjgdfjkd</span>
-        <span class="badge text-bg-dark">kdghkajdgkjgdfjkd</span>
-    
-        <div class="timeline timeline-dark">
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-              <div class="inner-circle">
-                <i class="fa-solid fa-check"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2003</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-            </div>
-          </div>
-          <div class="timeline-step disabled">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-              <div class="inner-circle">
-                <i class="fa-solid fa-ghost"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2004</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-            </div>
-          </div>
-          <div class="timeline-step disabled">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-              <div class="inner-circle">
-                <i class="fa-solid fa-film"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2005</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-            </div>
-          </div>
-          <div class="timeline-step disabled">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-              <div class="inner-circle">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2010</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-            </div>
-          </div>
-          <div class="timeline-step mb-0 disabled">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-              <div class="inner-circle">
-                <i class="fa-solid fa-square-full"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2020</p>
-              <p class="text-muted mb-0 mb-lg-0">In Fortune 500</p>
-            </div>
-          </div>
-        </div>
-    
-        <div class="timeline timeline-danger">
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-              <div class="inner-circle">
-                <i class="fa-solid fa-check"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2003</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-              <div class="inner-circle">
-                <i class="fa-solid fa-ghost"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2004</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-            </div>
-          </div>
-          <div class="timeline-step disabled">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-              <div class="inner-circle">
-                <i class="fa-solid fa-film"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2005</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-            </div>
-          </div>
-          <div class="timeline-step disabled">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-              <div class="inner-circle">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2010</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-            </div>
-          </div>
-          <div class="timeline-step mb-0 disabled">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-              <div class="inner-circle">
-                <i class="fa-solid fa-square-full"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2020</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
-            </div>
-          </div>
-        </div>
-    
-    
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="timeline timeline-warning">
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-              <div class="inner-circle">
-                <i class="fa-solid fa-check"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2003</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-              <div class="inner-circle">
-                <i class="fa-solid fa-ghost"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2004</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-              <div class="inner-circle">
-                <i class="fa-solid fa-film"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2005</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-              <div class="inner-circle">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2010</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-            </div>
-          </div>
-          <div class="timeline-step mb-0">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-              <div class="inner-circle">
-                <i class="fa-solid fa-square-full"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2020</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline timeline-secondary">
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-              <div class="inner-circle">
-                <i class="fa-solid fa-check"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2003</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-              <div class="inner-circle">
-                <i class="fa-solid fa-ghost"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2004</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-              <div class="inner-circle">
-                <i class="fa-solid fa-film"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2005</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-              <div class="inner-circle">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2010</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-            </div>
-          </div>
-          <div class="timeline-step mb-0">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-              <div class="inner-circle">
-                <i class="fa-solid fa-square-full"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2020</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline timeline-primary">
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-              <div class="inner-circle">
-                <i class="fa-solid fa-check"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2003</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-              <div class="inner-circle">
-                <i class="fa-solid fa-ghost"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2004</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-              <div class="inner-circle">
-                <i class="fa-solid fa-film"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2005</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-              <div class="inner-circle">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2010</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-            </div>
-          </div>
-          <div class="timeline-step mb-0">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-              <div class="inner-circle">
-                <i class="fa-solid fa-square-full"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2020</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline timeline-light">
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-              <div class="inner-circle">
-                <i class="fa-solid fa-check"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2003</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-              <div class="inner-circle">
-                <i class="fa-solid fa-ghost"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2004</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-              <div class="inner-circle">
-                <i class="fa-solid fa-film"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2005</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-              <div class="inner-circle">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2010</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-            </div>
-          </div>
-          <div class="timeline-step mb-0">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-              <div class="inner-circle">
-                <i class="fa-solid fa-square-full"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2020</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline timeline-success">
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-              <div class="inner-circle">
-                <i class="fa-solid fa-check"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2003</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-              <div class="inner-circle">
-                <i class="fa-solid fa-ghost"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2004</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-              <div class="inner-circle">
-                <i class="fa-solid fa-film"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2005</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-            </div>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-              <div class="inner-circle">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2010</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-            </div>
-          </div>
-          <div class="timeline-step mb-0">
-            <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-              data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-              <div class="inner-circle">
-                <i class="fa-solid fa-square-full"></i>
-              </div>
-              <p class="h6 mt-3 mb-1">2020</p>
-              <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
-            </div>
+          <div class="callout callout-primary">
+            <strong class="bg-danger">This is a callout.</strong> We built it custom for our docs so our messages to you
+            stand out. It has
+            three variants via modifier classes.
           </div>
         </div>
       </div>
-      
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-      </button>
-    
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+      <div class="input-group mb-3">
+        <span class="input-group-icon" id="basic-addon1">
+          <i class="fas fa-user"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <span class="input-group-icon" id="basic-addon1">
+          <i class="fas fa-user"></i>
+        </span>
+      </div>
+      <h1><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 1</h1>
+      <h2><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 2</h2>
+      <h3><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 3</h3>
+      <h4><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 4</h4>
+      <h5><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 5</h5>
+      <h6><i class="fas fa-exclamation-circle"></i>&nbsp;Heading 6</h6>
+      <hr>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          Featured
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+      <p class="fs-1"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h1</p>
+      <p class="fs-2"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h2</p>
+      <p class="fs-3"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h3</p>
+      <p class="fs-4"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h4</p>
+      <p class="fs-5"><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal tamaño h5</p>
+      <p><i class="fas fa-exclamation-circle"></i>&nbsp;Texto normal</p>
+      <small><i class="fas fa-exclamation-circle"></i>&nbsp;Texto pequeño</small>
+
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+
+      <div class="card card-product shadow-sm" style="width: 18rem;">
+        <img src="/assets/img/houses/house.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">$5000</h4>
+          <div class="card-text">Apartamento en renta</div>
+          <small class="d-block">lugar</small>
+          <small class="d-block">asd fecha xD</small>
+          <div class="row mt-1 gx-2">
+            <div class="col-auto"><small><i class="fas fa-exclamation-circle"></i>&nbsp;Holanda</small></div>
+            <div class="col-auto"><small><i class="fas fa-exclamation-circle"></i>&nbsp;Holanda</small></div>
+            <div class="col-auto"><small><i class="fas fa-exclamation-circle"></i>&nbsp;Holanda</small></div>
           </div>
         </div>
       </div>
-      <ng-include src="'/app/views/layout/footer.html'"></ng-include>
-    
+      <input class="form-control" type="text" name="" id="">
+
+
+      <span class="badge text-bg-primary">kdghkajdgkjgdfjkd</span>
+      <span class="badge text-bg-secondary">kdghkajdgkjgdfjkd</span>
+      <span class="badge text-bg-danger">kdghkajdgkjgdfjkd</span>
+      <span class="badge text-bg-warning">kdghkajdgkjgdfjkd</span>
+      <span class="badge text-bg-info">kdghkajdgkjgdfjkd</span>
+      <span class="badge text-bg-success">kdghkajdgkjgdfjkd</span>
+      <span class="badge text-bg-dark">kdghkajdgkjgdfjkd</span>
+
+      <div class="timeline timeline-dark">
+        <div class="timeline-step">
+          <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
+            <div class="inner-circle">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <p class="h6 mt-3 mb-1">2003</p>
+            <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+          </div>
+        </div>
+        <div class="timeline-step disabled">
+          <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
+            <div class="inner-circle">
+              <i class="fa-solid fa-ghost"></i>
+            </div>
+            <p class="h6 mt-3 mb-1">2004</p>
+            <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
+          </div>
+        </div>
+        <div class="timeline-step disabled">
+          <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+            <div class="inner-circle">
+              <i class="fa-solid fa-film"></i>
+            </div>
+            <p class="h6 mt-3 mb-1">2005</p>
+            <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
+          </div>
+        </div>
+        <div class="timeline-step disabled">
+          <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
+            <div class="inner-circle">
+              <i class="fa-solid fa-music"></i>
+            </div>
+            <p class="h6 mt-3 mb-1">2010</p>
+            <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
+          </div>
+        </div>
+        <div class="timeline-step mb-0 disabled">
+          <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
+            <div class="inner-circle">
+              <i class="fa-solid fa-square-full"></i>
+            </div>
+            <p class="h6 mt-3 mb-1">2020</p>
+            <p class="text-muted mb-0 mb-lg-0">In Fortune 500</p>
+          </div>
+        </div>
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-include src="'/app/views/layout/footer.html'"></ng-include>
+
 </body>
+
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="tucanton">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tucantón</title>
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.min.css">
+    <script src="/assets/js/angular.min.js"></script>
+    <script src="/app/app.js"></script>
+</head>
+
+<body style="background-image: url(/assets/img/background.jpg);background-position: center; background-repeat: no-repeat; background-size: cover;" ng-controller="registroController" class="min-vh-100 d-flex flex-column justify-content-between">
+    <div>
+        <div id="loader"></div>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-auto mx-auto">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-5">
+                            <form name="loginForm" ng-submit="register()" novalidate>
+                                <div class="vstack gap-4 mb-2 text-center">
+                                    <a href="/app/views/inicio.html"><img src="/assets/img/logo_horizontal_hd.png" style="height: 65px;" alt=""></a>
+                                    <h4>Registro</h4>
+                                    <div class="vstack gap-3">
+                                        <div class="text-start">
+                                            <input name="name" ng-model="login.name" type="text" class="form-control" placeholder="Nombre" required>
+                                            <small ng-show="loginForm.name.$invalid && loginForm.name.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <input name="surname" ng-model="login.surname" type="text" class="form-control" placeholder="Primer apellido" required>
+                                            <small ng-show="loginForm.surname.$invalid && loginForm.surname.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <input name="lastname" ng-model="login.lastname" type="text" class="form-control" placeholder="Segundo apellido (opcional)">
+                                            <small ng-show="loginForm.lastname.$invalid && loginForm.lastname.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <div class="input-group is-valid">
+                                                <span class="input-group-icon">
+                                                    <i class="fas fa-calendar-days"></i>
+                                                </span>
+                                                <input name="birthDate" ng-model="login.birthDate" type="date" class="form-control" placeholder="Fecha de nacimiento" required>
+                                            </div>
+                                            <small ng-show="loginForm.birthDate.$invalid && loginForm.birthDate.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <div class="input-group is-valid">
+                                                <span class="input-group-icon">
+                                                    <i class="fas fa-phone"></i>
+                                                </span>
+                                                <input name="phone" ng-model="login.phone" type="text" class="form-control" placeholder="Número de teléfono" required>
+                                            </div>
+                                            <small ng-show="loginForm.phone.$invalid && loginForm.phone.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <div class="input-group is-valid">
+                                                <span class="input-group-icon">
+                                                    <i class="fas fa-location-dot"></i>
+                                                </span>
+                                                <input name="location" ng-model="login.location" type="text" class="form-control" placeholder="Ciudad donde radica" required>
+                                            </div>
+                                            <small ng-show="loginForm.location.$invalid && loginForm.location.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <div class="input-group is-valid">
+                                                <span class="input-group-icon">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                                <input name="email" ng-model="login.email" type="text" class="form-control" placeholder="Correo electrónico" required>
+                                            </div>
+                                            <small ng-show="loginForm.email.$invalid && loginForm.email.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <div class="input-group">
+                                                <span class="input-group-icon">
+                                                    <i class="fas fa-key"></i>
+                                                </span>
+                                                <input name="password" ng-model="login.password" type="{{showPassword ? 'text' : 'password'}}" class="form-control" placeholder="Contraseña" required>
+                                                <span class="input-group-icon text-dark">
+                                                    <i style="width: 20px;" class="fas" role="button" ng-click="switchPassword()" ng-class="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                                                </span>
+                                            </div>
+                                            <small ng-show="loginForm.password.$invalid && loginForm.password.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                        <div class="text-start">
+                                            <div class="input-group">
+                                                <span class="input-group-icon">
+                                                    <i class="fas fa-key"></i>
+                                                </span>
+                                                <input name="passwordConfirmation" ng-model="login.passwordConfirmation" type="{{showpasswordConfirmation ? 'text' : 'password'}}" class="form-control" placeholder="Contraseña" required>
+                                                <span class="input-group-icon text-dark">
+                                                    <i style="width: 20px;" class="fas" role="button" ng-click="switchpasswordConfirmation()" ng-class="showpasswordConfirmation ? 'fa-eye-slash' : 'fa-eye'"></i>
+                                                </span>
+                                            </div>
+                                            <small ng-show="loginForm.passwordConfirmation.$invalid && loginForm.passwordConfirmation.$touched" class="text-danger">Campo obligatorio</small>
+                                        </div>
+                                    </div>
+                                    <div><button ng-disabled="loginForm.$invalid" class="btn btn-primary d-inline" type="submit"><i class="fas fa-user-check"></i>&nbsp;Registrarse</button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/utils.js"></script>
+    <script src="/app/controllers/registroController.js"></script>
+    <ng-include src="'/app/views/layout/footer.html'"></ng-include>
+</body>
+
+</html>

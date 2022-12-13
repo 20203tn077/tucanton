@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="tucanton">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tucantón</title>
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.min.css">
+    <script src="/assets/js/angular.min.js"></script>
+    <script src="/app/app.js"></script>
+</head>
+
+<body ng-controller="productController" class="min-vh-100 d-flex flex-column justify-content-between">
+    <div>
+        <div id="loader"></div>
+        <ng-include src="'/app/views/layout/navbar.html'"></ng-include>
+        <div class="container my-4 flex-grow">
+            <div class="row">
+                <div class="col-12 vstack gap-3">
+                    <h3>Propiedades en venta</h3>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3" ng-repeat="property in sales">
+                            <div class="card card-product shadow-sm h-100" role="button" ng-click="showProperty(property)">
+                                <img ng-src="/assets/img/houses/{{property.image}}" class="card-img-top" alt="...">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div class="vstack gap-1 mb-2">
+                                        <h4>{{property.price | currency}}</h4>
+                                        <h5>{{property.title}}</h5>
+                                        <span class="d-block"><i class="fas fa-location-dot"></i>&nbsp;{{property.location}}</span>
+                                        <span class="d-block"><i class="fas fa-calendar-days"></i>&nbsp;{{property.publishedDate | date:'dd/MM/yyyy'}}</span>
+                                    </div>
+                                    <div class="row gx-2">
+                                        <div ng-if="property.rooms" class="col-auto"><small><i class="fas fa-bed"></i>&nbsp;{{property.rooms}}</small></div>
+                                        <div ng-if="property.area" class="col-auto"><small><i class="fas fa-ruler-combined"></i>&nbsp;{{property.area}} m²</small></div>
+                                        <div ng-if="property.floors" class="col-auto"><small><i class="fas fa-stairs"></i>&nbsp;{{property.floors}}</small></div>
+                                        <div ng-if="property.fullBaths" class="col-auto"><small><i class="fas fa-bath"></i>&nbsp;{{property.fullBaths}}</small></div>
+                                        <div ng-if="property.halfBaths" class="col-auto"><small><i class="fas fa-toilet"></i>&nbsp;{{property.halfBaths}}</small></div>
+                                        <div ng-if="property.parkings" class="col-auto"><small><i class="fas fa-car"></i>&nbsp;{{property.parkings}}</small></div>
+                                        <div ng-if="property.pools" class="col-auto"><small><i class="fas fa-water-ladder"></i>&nbsp;{{property.pools}}</small></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/utils.js"></script>
+    <script src="/app/controllers/productController.js"></script>
+    <ng-include src="'/app/views/layout/footer.html'"></ng-include>
+</body>
+
+</html>
