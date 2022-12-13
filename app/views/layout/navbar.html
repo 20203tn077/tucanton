@@ -3,7 +3,8 @@
         <a class="navbar-brand mx-auto mx-md-0" href="/app/views/inicio.html">
             <img src="/assets/img/logo_horizontal.png" alt="logo" height="40" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,30 +23,35 @@
                 </li>
             </ul>
             <div class="d-grid gap-2 d-md-block">
-                <a class="btn btn-primary" href="/app/views/inicio_de_sesion.html"><i class="fas fa-right-to-bracket"></i>&nbsp;Ingresar</a>
+                <a class="btn btn-primary" href="/app/views/inicio_de_sesion.html"><i
+                        class="fas fa-right-to-bracket"></i>&nbsp;Ingresar</a>
             </div>
         </div>
     </div>
 </nav>
 
-<nav ng-if="sessionUser && sessionUser.role === 'Usuario'" class="navbar navbar-expand-md bg-white shadow-sm sticky-top">
+<nav ng-if="sessionUser && sessionUser.role === 'Usuario'"
+    class="navbar navbar-expand-md bg-white shadow-sm sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand mx-auto mx-md-0" href="/app/views/inicio.html">
             <img src="/assets/img/logo_horizontal.png" alt="logo" height="40" />
         </a>
         <button type="button" class="d-md-none me-3 btn text-primary p-0 m-0 position-relative align-bottom">
             <h4 class="m-0"><i class="fa fa-bell"></i></h4>
-            <span ng-show="notifications.length" class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
+            <span ng-show="notifications.length"
+                class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
                 {{notifications.length}}
             </span>
         </button>
         <button type="button" class="d-md-none me-3 btn text-primary p-0 m-0 position-relative align-bottom">
             <h4 class="m-0"><i class="fa fa-shopping-cart"></i></h4>
-            <span ng-show="cartItems.length" class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
+            <span ng-show="cartItems.length"
+                class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
                 {{cartItems.length}}
             </span>
         </button>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -64,26 +70,80 @@
                 </li>
             </ul>
             <ul class="navbar-nav d-flex">
-                <button type="button" class="d-none d-md-block me-3 btn text-primary p-0 m-0 position-relative align-bottom">
-                    <h4 class="m-0"><i class="fa fa-bell"></i></h4>
-                    <span ng-show="notifications.length" class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
-                        {{notifications.length}}
-                    </span>
-                </button>
-                <button type="button" class="d-none d-md-block me-3 btn text-primary p-0 m-0 position-relative align-bottom">
+                <div class="dropdown d-flex">
+                    <button type="button" data-bs-toggle="dropdown" class="d-none d-md-block me-3 btn text-primary p-0 m-0 position-relative align-bottom">
+                        <h4 class="m-0"><i class="fa fa-bell"></i></h4>
+                        <span ng-show="notifications.length" class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
+                            {{notifications.length}}
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" style="width: 300px;">
+                        <table class="table table-hover m-0">
+                            <tr>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img src="/assets/img/users/seller2.jpg" style="height: 40px; width: 40px;" class="rounded-pill" alt="">
+                                        </div>
+                                        <div class="col">
+                                            <div class="vstack gap-0">
+                                                <b><span>Liz claudia</span></b>
+                                                <small>Hola, aún te interesa la casa?</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="vstack gap-0 h-100 d-flex flex-column justify-content-between">
+                                                <small><span class="badge bg-transparent p-0 text-dark">18:45</span></small>
+                                                <span class="badge text-bg-primary rounded-pill">3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img src="/assets/img/users/seller3.jpg" style="height: 40px; width: 40px;" class="rounded-pill" alt="">
+                                        </div>
+                                        <div class="col">
+                                            <div class="vstack gap-0">
+                                                <b><span>Daniel Oviedo</span></b>
+                                                <small>Hola, Buenas tardes</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="vstack gap-0 h-100 d-flex flex-column justify-content-between">
+                                                <small><span class="badge bg-transparent p-0 text-dark">18:45</span></small>
+                                                <span class="badge text-bg-primary rounded-pill">3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+                </div>
+                <button type="button"
+                    class="d-none d-md-block me-3 btn text-primary p-0 m-0 position-relative align-bottom">
                     <h4 class="m-0"><i class="fa fa-shopping-cart"></i></h4>
-                    <span ng-show="cartItems.length" class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
+                    <span ng-show="cartItems.length"
+                        class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
                         {{cartItems.length}}
                     </span>
                 </button>
                 <li class="nav-item dropdown align-middle">
-                    <span class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="img-fluid rounded-pill me-2" style="width: 40px; height: 40px;" ng-src="/assets/img/users/{{sessionUser.picture}}" alt="">
+                    <span class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img class="img-fluid rounded-pill me-2" style="width: 40px; height: 40px;"
+                            ng-src="/assets/img/users/{{sessionUser.picture}}" alt="">
                         {{sessionUser.name}}
                     </span>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/app/views/perfil.html"><i class="fas fa-user"></i>&nbsp;Mi perfil</a></li>
-                        <li><span role="button" onclick="logout()" class="dropdown-item" href="#"><i class="fas fa-right-from-bracket"></i>&nbsp;Cerrar sesión</span></li>
+                        <li><a class="dropdown-item" href="/app/views/perfil.html"><i class="fas fa-user"></i>&nbsp;Mi
+                                perfil</a></li>
+                        <li><span role="button" onclick="logout()" class="dropdown-item" href="#"><i
+                                    class="fas fa-right-from-bracket"></i>&nbsp;Cerrar sesión</span></li>
                     </ul>
                 </li>
             </ul>
@@ -92,18 +152,21 @@
 </nav>
 
 
-<nav ng-if="sessionUser && sessionUser.role === 'Administrador'" class="navbar navbar-expand-md bg-white shadow-sm sticky-top">
+<nav ng-if="sessionUser && sessionUser.role === 'Administrador'"
+    class="navbar navbar-expand-md bg-white shadow-sm sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand mx-auto mx-md-0" href="/app/views/inicio.html">
             <img src="/assets/img/logo_horizontal.png" alt="logo" height="40" />
         </a>
         <button type="button" class="d-md-none me-3 btn text-primary p-0 m-0 position-relative align-bottom">
             <h4 class="m-0"><i class="fa fa-bell"></i></h4>
-            <span ng-show="notifications.length" class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
+            <span ng-show="notifications.length"
+                class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
                 {{notifications.length}}
             </span>
         </button>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -122,20 +185,25 @@
                 </li>
             </ul>
             <ul class="navbar-nav d-flex">
-                <button type="button" class="d-none d-md-block me-3 btn text-primary p-0 m-0 position-relative align-bottom">
+                <button type="button"
+                    class="d-none d-md-block me-3 btn text-primary p-0 m-0 position-relative align-bottom">
                     <h4 class="m-0"><i class="fa fa-bell"></i></h4>
-                    <span ng-show="notifications.length" class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
+                    <span ng-show="notifications.length"
+                        class="mt-2 position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill p-1">
                         {{notifications.length}}
                     </span>
                 </button>
                 <li class="nav-item dropdown align-middle">
-                    <span class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="img-fluid rounded-pill me-2" style="width: 40px; height: 40px;" ng-src="/assets/img/users/{{sessionUser.picture}}" alt="">
+                    <span class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img class="img-fluid rounded-pill me-2" style="width: 40px; height: 40px;"
+                            ng-src="/assets/img/users/{{sessionUser.picture}}" alt="">
                         {{sessionUser.name}}
                     </span>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><span class="dropdown-item" href="#"><i class="fas fa-user"></i>&nbsp;Mi perfil</span></li>
-                        <li><span role="button" onclick="logout()" class="dropdown-item" href="#"><i class="fas fa-right-from-bracket"></i>&nbsp;Cerrar sesión</span></li>
+                        <li><span role="button" onclick="logout()" class="dropdown-item" href="#"><i
+                                    class="fas fa-right-from-bracket"></i>&nbsp;Cerrar sesión</span></li>
                     </ul>
                 </li>
             </ul>

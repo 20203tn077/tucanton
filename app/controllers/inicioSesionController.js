@@ -17,6 +17,7 @@ app.controller('inicioSesionController', $scope => {
             paymentMethods: [
                 {
                     network: 'Visa',
+                    type: 'Débito',
                     bank: 'BBVA',
                     number: '1287284728462957',
                     cvv: '374',
@@ -24,36 +25,40 @@ app.controller('inicioSesionController', $scope => {
                     expires: '12/24'
                 },
                 {
-                    network: 'Visa',
-                    bank: 'BBVA',
-                    number: '1287284728462957',
+                    network: 'Mastercard',
+                    type: 'Débito',
+                    bank: 'Citibanamex',
+                    number: '3957395739483948',
                     cvv: '374',
                     owner: 'Maria Andrea Copca Hernandez',
-                    expires: '12/24'
+                    expires: '12/25'
+                },
+                {
+                    network: 'Mastercard',
+                    type: 'Crédito',
+                    bank: 'Nu',
+                    number: '9642696487426864',
+                    cvv: '374',
+                    owner: 'Ana Paula Copca Hernandez',
+                    expires: '06/25'
+                },
+                {
+                    network: 'Mastercard',
+                    type: 'Crédito',
+                    bank: 'Banco Azteca',
+                    number: '4629736489273928',
+                    cvv: '374',
+                    owner: 'Maria Andrea Copca Hernandez',
+                    expires: '11/24'
                 },
                 {
                     network: 'Visa',
-                    bank: 'BBVA',
-                    number: '1287284728462957',
+                    type: 'Crédito',
+                    bank: 'BanCoppel',
+                    number: '0101098023949238',
                     cvv: '374',
                     owner: 'Maria Andrea Copca Hernandez',
-                    expires: '12/24'
-                },
-                {
-                    network: 'Visa',
-                    bank: 'BBVA',
-                    number: '1287284728462957',
-                    cvv: '374',
-                    owner: 'Maria Andrea Copca Hernandez',
-                    expires: '12/24'
-                },
-                {
-                    network: 'Visa',
-                    bank: 'BBVA',
-                    number: '1287284728462957',
-                    cvv: '374',
-                    owner: 'Maria Andrea Copca Hernandez',
-                    expires: '12/24'
+                    expires: '12/23'
                 },
             ]
         }))

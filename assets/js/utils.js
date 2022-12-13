@@ -28,3 +28,20 @@ const logout = () => {
     localStorage.removeItem('session_user')
     window.location.replace('/app/views/inicio_de_sesion.html')
 }
+
+
+const chat = {
+    user: {
+        name: '',
+        picture: ''
+    },
+    status: '',
+    unreadMessages: 0,
+    messages: [
+        {
+            mine: false,
+            text: '',
+            hour: ''
+        }
+    ]
+}
