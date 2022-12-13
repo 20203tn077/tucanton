@@ -14,21 +14,80 @@
     <script src="/app/app.js"></script>
 </head>
 
-<body class="min-vh-100 d-flex flex-column justify-content-between">
+<body ng-controller="productController" class="bg-light min-vh-100 d-flex flex-column justify-content-between">
     <div>
         <div id="loader"></div>
         <ng-include src="'/app/views/layout/navbar.html'"></ng-include>
         <div class="container my-4">
-            <div class="row">
-                <div class="col-12">
-
+            <h3 class="mb-4">Mi perfil</h3>
+            <div class="row g-3">
+                <div class="col-12 col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body vstack gap-3">
+                            <div class="text-center">
+                                <img ng-src="/assets/img/users/{{sessionUser.picture}}" class="rounded-pill" style="height: 250px; width: 250px;" alt="">
+                            </div>
+                            <h3 class="text-center">{{sessionUser.name}} {{sessionUser.surname}} {{sessionUser.lastname}}</h3>
+                            <h4>Información</h4>
+                            <div class="vstack gap-0">
+                                <small><i class="fas fa-envelope"></i>&nbsp;Correo electrónico</small>
+                                <span class="fs-5 fw-bold">{{sessionUser.email}}</span>
+                            </div>
+                            <div class="vstack gap-0">
+                                <small><i class="fas fa-phone"></i>&nbsp;Número de teléfono</small>
+                                <span class="fs-5 fw-bold">{{sessionUser.phoneNumber}}</span>
+                            </div>
+                            <div class="vstack gap-0">
+                                <small><i class="fas fa-location-dot"></i>&nbsp;Ubicación</small>
+                                <span class="fs-5 fw-bold">{{sessionUser.location}}</span>
+                            </div>
+                            <div class="vstack gap-0">
+                                <small><i class="fas fa-calendar-days"></i>&nbsp;Fecha de nacimiento</small>
+                                <span class="fs-5 fw-bold">{{sessionUser.birthDate | date:'dd/MM/yyyy'}}</span>
+                            </div>
+                            <div>
+                                <button type="button" class="ms-auto btn btn-primary"><i class="fas fa-edit"></i>&nbsp;Editar información</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body vstack gap-3">
+                            <div class="row g-3">
+                                <div class="col-auto">
+                                    <h4 class="d-inline">Mis métodos de pago</h4>
+                                </div>
+                                <div class="ms-auto col-auto"><button type="button" class="ms-auto btn btn-success"><i class="fas fa-plus"></i>&nbsp;Agregar método de pago</button></div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6 col-xl-4" ng-repeat="card in sessionUser.paymentMethods">
+                                    <div class="card shadow-sm border border-0" ng-style="getBankColor(card.bank)">
+                                        <div class="card-body vstack gap-3 text-white ">
+                                            <div class="hstack w-100 d-flex flex-row justify-content-between">
+                                                <div><img class="me-2" ng-src="/assets/img/banks/{{getBankImage(card.network)}}" style="height: 16px;" alt="">
+                                                    <span>Débito</span>
+                                                </div>
+                                                <img class="ms" ng-src="/assets/img/banks/{{getBankImage(card.bank)}}" style="height: 16px;" alt="">
+                                            </div>
+                                            <h5>**** **** **** {{card.number.substring(12)}}</h5>
+                                            <div class="hstack text-white w-100 d-flex flex-row justify-content-between">
+                                                <div>{{card.owner}}</div>
+                                                <h5>{{card.expires}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/utils.js"></script>
-    <script src="/app/controllers/inicioController.js"></script>
+    <script src="/app/controllers/chatController.js"></script>
     <ng-include src="'/app/views/layout/footer.html'"></ng-include>
 </body>
 

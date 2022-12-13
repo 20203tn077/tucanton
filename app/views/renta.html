@@ -14,13 +14,13 @@
     <script src="/app/app.js"></script>
 </head>
 
-<body ng-controller="productController" class="min-vh-100 d-flex flex-column justify-content-between">
+<body ng-controller="productController" class="bg-light min-vh-100 d-flex flex-column justify-content-between">
     <div>
         <div id="loader"></div>
         <ng-include src="'/app/views/layout/navbar.html'"></ng-include>
         <div class="container my-4 flex-grow">
             <div class="row">
-                <div class="col-12 vstack gap-3">
+                <div class="col-12 vstack gap-4">
                     <h3>Propiedades en renta</h3>
                     <div class="row g-3">
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3" ng-repeat="property in rents">
